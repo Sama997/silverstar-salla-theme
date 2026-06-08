@@ -1,10 +1,11 @@
 {
-  "version": "2.0.0",
+  "version": "1.0.0",
   "theme_name": "Silver Star Celia Premium",
   "repo_url": "https://github.com/Sama997/silverstar-salla-theme",
   "support_url": "https://silverstar14.com",
-  "theme_screenshot": "src/assets/images/vacuum-30l.jpg",
   "features": [
+    "component-featured-products",
+    "component-fixed-banner",
     "filters",
     "component-products-slider",
     "component-fixed-products",
@@ -13,33 +14,63 @@
     "component-youtube",
     "component-testimonials"
   ],
-  "settings": {
-    "primary_color": "#005295",
-    "secondary_color": "#004d73",
-    "accent_color": "#c8a34a",
-    "layout_direction": "rtl",
-    "store_language": "ar"
-  },
+  "settings": [
+    {
+      "type": "string",
+      "id": "primary_color",
+      "label": "اللون الأساسي",
+      "format": "color",
+      "value": "#005295"
+    },
+    {
+      "type": "string",
+      "id": "secondary_color",
+      "label": "اللون الثانوي",
+      "format": "color",
+      "value": "#004d73"
+    },
+    {
+      "type": "string",
+      "id": "accent_color",
+      "label": "لون اللمسة الذهبية",
+      "format": "color",
+      "value": "#c8a34a"
+    },
+    {
+      "type": "string",
+      "id": "placeholder",
+      "format": "hidden",
+      "value": "src/assets/images/vacuum-30l.jpg"
+    }
+  ],
   "components": [
     {
-      "name": "silverstar_hero",
+      "name": "silverstar-hero",
+      "title": "واجهة سيلفر ستار الرئيسية",
+      "icon": "sicon-image-carousel",
       "path": "home.hero",
-      "display_name": "واجهة سيلفر ستار الرئيسية"
+      "fields": []
     },
     {
-      "name": "technical_advantages",
+      "name": "technical-advantages",
+      "title": "المزايا التقنية",
+      "icon": "sicon-bolt",
       "path": "home.technical-advantages",
-      "display_name": "المزايا التقنية"
+      "fields": []
     },
     {
-      "name": "vacuum_comparison",
+      "name": "vacuum-comparison",
+      "title": "مقارنة المقاسات",
+      "icon": "sicon-layout-grid",
       "path": "home.comparison",
-      "display_name": "مقارنة المقاسات"
+      "fields": []
     },
     {
-      "name": "proof_video",
+      "name": "proof-video",
+      "title": "فيديو التجربة",
+      "icon": "sicon-video",
       "path": "home.proof",
-      "display_name": "فيديو التجربة"
+      "fields": []
     }
   ]
 }
