@@ -271,10 +271,32 @@
     arrangeSilverStarHomeOrder();
   }
 
+  function removeExtraNativeHairImage() {
+    var image = document.querySelector('img[src*="352f74dd-2c46-4788-a982-844be3b1b06d"]');
+    if (!image) return false;
+
+    var card = image.closest(".col-span-2") || image.closest("a") || image.parentElement;
+    if (!card || !card.parentElement) return false;
+
+    card.remove();
+    return true;
+  }
+
+  function scheduleNativeHairImageCleanup() {
+    var tries = 0;
+    var timer = setInterval(function () {
+      tries++;
+      if (removeExtraNativeHairImage() || tries >= 60) clearInterval(timer);
+    }, 250);
+
+    removeExtraNativeHairImage();
+  }
+
   function init() {
     markFirstProductSection();
     injectAfterHeader();
     scheduleSilverStarHomeOrder();
+    scheduleNativeHairImageCleanup();
   }
 
   if (document.readyState === "loading") {
