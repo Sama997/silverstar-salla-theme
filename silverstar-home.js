@@ -203,6 +203,7 @@
     var host = document.querySelector(".ss-home-injected");
     if (!host) return false;
 
+    var slider = document.querySelector(".advanced-slider--1");
     var hero = host.querySelector(".ss-hero-wrap") || document.querySelector(".ss-hero-wrap");
     var vacuum15 =
       document.querySelector(".special-product--2") ||
@@ -213,18 +214,20 @@
     var melissa = document.querySelector(".ss-hair-section");
     var brand = document.querySelector(".ss-brand-strip");
 
-    if (!hero || !vacuum15 || !vacuum30 || !melissa) return false;
+    if (!slider || !vacuum15 || !vacuum30 || !melissa) return false;
 
-    if (hero.parentElement !== host || hero !== host.firstElementChild) {
-      host.insertBefore(hero, host.firstElementChild);
+    if (hero) hero.remove();
+
+    if (slider.parentElement !== host || slider !== host.firstElementChild) {
+      host.insertBefore(slider, host.firstElementChild);
     }
 
-    hero.insertAdjacentElement("afterend", vacuum15);
+    slider.insertAdjacentElement("afterend", vacuum15);
     vacuum15.insertAdjacentElement("afterend", vacuum30);
     vacuum30.insertAdjacentElement("afterend", melissa);
     if (brand) melissa.insertAdjacentElement("afterend", brand);
 
-    host.setAttribute("data-ss-home-order", "hero-15l-30l-melissa");
+    host.setAttribute("data-ss-home-order", "slider-15l-30l-melissa");
     return true;
   }
 
