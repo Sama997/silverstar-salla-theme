@@ -32,8 +32,14 @@ body.ss-runtime .store-header .navbar-brand {
   justify-content: center !important;
 }
 
-body.ss-runtime .store-header .navbar-brand img.logo-normal,
-body.ss-runtime .store-header .navbar-brand img.logo-dark {
+/* Celia renders normal/dark logo images. Hide every duplicate, then show one white mark only. */
+body.ss-runtime .store-header .navbar-brand img,
+body.ss-runtime .store-header .navbar-brand picture,
+body.ss-runtime .store-header .navbar-brand source {
+  display: none !important;
+}
+
+body.ss-runtime .store-header .navbar-brand img.logo-normal {
   display: block !important;
   width: 100% !important;
   height: 100% !important;
@@ -43,8 +49,14 @@ body.ss-runtime .store-header .navbar-brand img.logo-dark {
   filter: brightness(0) invert(1) drop-shadow(0 3px 7px rgba(0, 33, 61, 0.30)) !important;
 }
 
-body.ss-runtime .store-header .navbar-brand img.logo-dark.hidden {
+body.ss-runtime .store-header .navbar-brand img.logo-dark,
+body.ss-runtime .store-header .navbar-brand img.logo-dark.hidden,
+body.ss-runtime .store-header .navbar-brand img:not(.logo-normal) {
   display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 body.ss-runtime .store-header a,
@@ -109,8 +121,7 @@ body.ss-runtime .store-header input[type="search"]::placeholder {
     padding: 6px 7px !important;
   }
 
-  body.ss-runtime .store-header .navbar-brand img.logo-normal,
-  body.ss-runtime .store-header .navbar-brand img.logo-dark {
+  body.ss-runtime .store-header .navbar-brand img.logo-normal {
     max-height: 41px !important;
   }
 }
