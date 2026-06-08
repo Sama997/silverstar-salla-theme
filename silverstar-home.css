@@ -30,6 +30,43 @@ body.ss-enhanced-home #app {
 }
 
 /* =========================
+   Main Advanced Slider
+   ========================= */
+
+body.ss-enhanced-home .advanced-slider--1 {
+  width: min(1180px, calc(100% - 28px)) !important;
+  height: clamp(420px, 46vw, 620px) !important;
+  margin: 14px auto 24px !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  background: #eef4f8 !important;
+  box-shadow: 0 18px 46px rgba(0, 77, 115, 0.16) !important;
+  border: 1px solid rgba(0, 82, 149, 0.10) !important;
+  isolation: isolate;
+}
+
+body.ss-enhanced-home .advanced-slider--1 salla-slider,
+body.ss-enhanced-home .advanced-slider--1 .s-slider-wrapper,
+body.ss-enhanced-home .advanced-slider--1 .s-slider-container,
+body.ss-enhanced-home .advanced-slider--1 .swiper,
+body.ss-enhanced-home .advanced-slider--1 .swiper-wrapper,
+body.ss-enhanced-home .advanced-slider--1 .swiper-slide,
+body.ss-enhanced-home .advanced-slider--1 .advanced-slider__slide,
+body.ss-enhanced-home .advanced-slider--1 .advanced-slider__caption {
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+body.ss-enhanced-home .advanced-slider--1 .advanced-slider__image,
+body.ss-enhanced-home .advanced-slider--1 img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: inherit !important;
+}
+
+/* =========================
    Hero Section
    ========================= */
 
@@ -488,6 +525,14 @@ body.ss-enhanced-home .btn--primary {
    ========================= */
 
 @media (max-width: 900px) {
+  body.ss-enhanced-home .advanced-slider--1 {
+    width: min(100% - 18px, 620px) !important;
+    height: clamp(430px, calc((100vw - 18px) * 1.48), 560px) !important;
+    margin: 10px auto 18px !important;
+    border-radius: 22px !important;
+    box-shadow: 0 14px 34px rgba(0, 77, 115, 0.14) !important;
+  }
+
   .ss-hero {
     grid-template-columns: 1fr;
     padding: 34px 24px;
