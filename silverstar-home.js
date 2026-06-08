@@ -111,27 +111,27 @@
       <section class="ss-hair-section" aria-label="Hair Devices">
         <div class="ss-section-head">
           <div>
-            <h2>أجهزة الشعر</h2>
-            <p>قسم جديد لمنتجات العناية اليومية: استشوار شعر وويفي شعر بتقديم مرتب وواضح.</p>
+            <h2>أجهزة الشعر من ميليسا</h2>
+            <p>استشوارات وفرش حرارية وتمويج للشعر بجودة فاخرة ونتائج ثابتة.</p>
           </div>
-          <a class="ss-mini-link" href="/search?q=أجهزة%20الشعر">مشاهدة القسم</a>
+          <a class="ss-mini-link" href="/search?q=أجهزة%20الشعر">تسوقي أجهزة الشعر</a>
         </div>
 
         <div class="ss-hair-grid">
           <a class="ss-hair-card" href="/search?q=استشوار%20شعر">
             <div class="ss-hair-content">
-              <small>Hair Dryer</small>
-              <h3>استشوار شعر</h3>
-              <p>اختيارات عملية للاستخدام اليومي بتصميم أنيق وسهل الاستخدام.</p>
+              <small>فرشاة هواء ساخن</small>
+              <h3>استشوار وفرشاة ميليسا</h3>
+              <p>تصفيف سريع بلمسة ناعمة ولمعان يليق بالاستخدام اليومي.</p>
               <span>تسوق الآن</span>
             </div>
           </a>
 
           <a class="ss-hair-card" href="/search?q=ويفي%20شعر">
             <div class="ss-hair-content">
-              <small>Hair Waver</small>
-              <h3>ويفي شعر</h3>
-              <p>منتجات مخصصة لتصفيف الشعر بطريقة سهلة ومظهر احترافي.</p>
+              <small>جهاز تمويج الشعر</small>
+              <h3>تمويج احترافي بلمسة واحدة</h3>
+              <p>مظهر ثابت وتموجات أنيقة بدون تعقيد.</p>
               <span>اكتشف المنتج</span>
             </div>
           </a>
@@ -191,9 +191,57 @@
     return true;
   }
 
+  function findSectionByText(selector, text) {
+    var list = document.querySelectorAll(selector);
+    for (var i = 0; i < list.length; i++) {
+      if ((list[i].innerText || "").indexOf(text) !== -1) return list[i];
+    }
+    return null;
+  }
+
+  function arrangeSilverStarHomeOrder() {
+    var host = document.querySelector(".ss-home-injected");
+    if (!host) return false;
+
+    var hero = host.querySelector(".ss-hero-wrap") || document.querySelector(".ss-hero-wrap");
+    var vacuum15 =
+      document.querySelector(".special-product--2") ||
+      findSectionByText("main > section, section", "15 لتر");
+    var vacuum30 =
+      document.querySelector(".s-block--advanced-content") ||
+      findSectionByText("main > section, section", "30 لتر");
+    var melissa = document.querySelector(".ss-hair-section");
+    var brand = document.querySelector(".ss-brand-strip");
+
+    if (!hero || !vacuum15 || !vacuum30 || !melissa) return false;
+
+    if (hero.parentElement !== host || hero !== host.firstElementChild) {
+      host.insertBefore(hero, host.firstElementChild);
+    }
+
+    hero.insertAdjacentElement("afterend", vacuum15);
+    vacuum15.insertAdjacentElement("afterend", vacuum30);
+    vacuum30.insertAdjacentElement("afterend", melissa);
+    if (brand) melissa.insertAdjacentElement("afterend", brand);
+
+    host.setAttribute("data-ss-home-order", "hero-15l-30l-melissa");
+    return true;
+  }
+
+  function scheduleSilverStarHomeOrder() {
+    var tries = 0;
+    var timer = setInterval(function () {
+      tries++;
+      if (arrangeSilverStarHomeOrder() || tries >= 60) clearInterval(timer);
+    }, 250);
+
+    arrangeSilverStarHomeOrder();
+  }
+
   function init() {
     markFirstProductSection();
     injectAfterHeader();
+    scheduleSilverStarHomeOrder();
   }
 
   if (document.readyState === "loading") {
