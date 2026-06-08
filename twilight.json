@@ -1,9 +1,16 @@
 {
-  "version": "1.0.0",
-  "theme_name": "Silver Star Celia Premium",
-  "repo_url": "https://github.com/Sama997/silverstar-salla-theme",
-  "support_url": "https://silverstar14.com",
+  "name": {
+    "ar": "Silver Star Celia Premium",
+    "en": "Silver Star Celia Premium"
+  },
+  "repository": "https://github.com/Sama997/silverstar-salla-theme",
+  "author_email": "support@silverstar14.com",
   "features": [
+    "mega-menu",
+    "fonts",
+    "color",
+    "breadcrumb",
+    "unite-cards-height",
     "component-featured-products",
     "component-fixed-banner",
     "filters",
@@ -12,29 +19,20 @@
     "component-store-features",
     "component-photos-slider",
     "component-youtube",
-    "component-testimonials"
+    "component-testimonials",
+    "menu-images"
   ],
   "settings": [
     {
-      "type": "string",
-      "id": "primary_color",
-      "label": "اللون الأساسي",
-      "format": "color",
-      "value": "#005295"
-    },
-    {
-      "type": "string",
-      "id": "secondary_color",
-      "label": "اللون الثانوي",
-      "format": "color",
-      "value": "#004d73"
-    },
-    {
-      "type": "string",
-      "id": "accent_color",
-      "label": "لون اللمسة الذهبية",
-      "format": "color",
-      "value": "#c8a34a"
+      "type": "boolean",
+      "icon": "sicon-toggle-off",
+      "label": "تثبيت زر الإضافة للسلة أسفل شاشة الجوال",
+      "description": null,
+      "id": "sticky_add_to_cart",
+      "format": "switch",
+      "required": false,
+      "value": true,
+      "selected": true
     },
     {
       "type": "string",
@@ -45,29 +43,41 @@
   ],
   "components": [
     {
-      "name": "silverstar-hero",
-      "title": "واجهة سيلفر ستار الرئيسية",
+      "key": "41e8cbe9-7f3a-4f23-b279-5c514bd60d37",
+      "title": {
+        "ar": "واجهة سيلفر ستار الرئيسية",
+        "en": "Silver Star Hero"
+      },
       "icon": "sicon-image-carousel",
       "path": "home.hero",
       "fields": []
     },
     {
-      "name": "technical-advantages",
-      "title": "المزايا التقنية",
+      "key": "3bd70910-28f6-4d2e-b6b8-2e6d3aa4d29d",
+      "title": {
+        "ar": "المزايا التقنية",
+        "en": "Technical Advantages"
+      },
       "icon": "sicon-bolt",
       "path": "home.technical-advantages",
       "fields": []
     },
     {
-      "name": "vacuum-comparison",
-      "title": "مقارنة المقاسات",
+      "key": "356d7d28-d8f8-4040-bd15-34593131e0d1",
+      "title": {
+        "ar": "مقارنة المقاسات",
+        "en": "Vacuum Size Comparison"
+      },
       "icon": "sicon-layout-grid",
       "path": "home.comparison",
       "fields": []
     },
     {
-      "name": "proof-video",
-      "title": "فيديو التجربة",
+      "key": "1ebca14b-57dd-4e77-b7ab-fb5e7b658900",
+      "title": {
+        "ar": "فيديو التجربة",
+        "en": "Proof Video"
+      },
       "icon": "sicon-video",
       "path": "home.proof",
       "fields": []
