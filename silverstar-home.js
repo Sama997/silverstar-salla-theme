@@ -65,9 +65,9 @@
           <div class="ss-hero-visual" aria-hidden="true">
             <div class="ss-product-orbit">
               <div>
-                <strong>Silver<br>Star</strong>
-                <span>Vacuum Cleaners</span>
-                <em>اختيار ذكي للمنزل</em>
+                <strong>سيلفر<br>ستار</strong>
+                <span>مكانس كهربائية بضمان</span>
+                <em>نظافة أسهل كل يوم</em>
               </div>
             </div>
           </div>
