@@ -108,13 +108,61 @@
         </div>
       </section>
 
+      <section class="ss-compare-section" aria-label="Vacuum Comparison">
+        <div class="ss-compare-head">
+          <small>اختيار المقاس المناسب</small>
+          <h2>أي مكنسة تناسب بيتك؟</h2>
+          <p>مقارنة مختصرة تساعد العميل يقرر بسرعة بين 15 لتر و30 لتر حسب مساحة البيت وطبيعة التنظيف.</p>
+        </div>
+
+        <div class="ss-compare-grid">
+          <details class="ss-compare-card" open>
+            <summary>
+              <span>15 لتر</span>
+              <b>خفيفة وسريعة</b>
+              <em>للاستخدام اليومي</em>
+            </summary>
+            <ul>
+              <li>مناسبة للشقق والتنظيف المتكرر.</li>
+              <li>أسهل في التخزين والتنقل.</li>
+              <li>خيار عملي للبيت اليومي.</li>
+            </ul>
+            <a class="ss-compare-action" href="/OEDewr">اختيار 15 لتر</a>
+          </details>
+
+          <details class="ss-compare-card ss-compare-card-primary" open>
+            <summary>
+              <span>30 لتر</span>
+              <b>سعة وقوة أكبر</b>
+              <em>للمساحات الكبيرة</em>
+            </summary>
+            <ul>
+              <li>مناسبة للبيوت الكبيرة والاستراحات.</li>
+              <li>خزان أكبر لجلسات تنظيف أطول.</li>
+              <li>أفضل للتنظيف العميق والاستخدام المكثف.</li>
+            </ul>
+            <a class="ss-compare-action" href="/VqRjKrQ">اختيار 30 لتر</a>
+          </details>
+        </div>
+
+        <div class="ss-compare-note">
+          <b>اختيار سريع:</b>
+          <span>15 لتر للاستخدام اليومي، و30 لتر للمساحات الكبيرة والتنظيف العميق.</span>
+        </div>
+      </section>
+
       <section class="ss-hair-section" aria-label="Hair Devices">
         <div class="ss-section-head">
           <div>
-            <h2>أجهزة الشعر من ميليسا</h2>
-            <p>استشوارات وفرش حرارية وتمويج للشعر بجودة فاخرة ونتائج ثابتة.</p>
+            <h2>أجهزة الشعر المختارة</h2>
+            <p>منتجات تصفيف وعناية مختارة ضمم أقسام سيلفر ستار، بحضور بصري هادئ لا يطغى على منتجاتنا الأساسية.</p>
           </div>
           <a class="ss-mini-link" href="/search?q=أجهزة%20الشعر">تسوقي أجهزة الشعر</a>
+        </div>
+
+        <div class="ss-melissa-media" aria-label="Melissa Hair Devices Images">
+          <img src="https://cdn.jsdelivr.net/gh/Sama997/silverstar-salla-theme@main/assets/generated/melissa-thumb-section.jpg?v=20260608-05" alt="أجهزة شعر مختارة من ميليسا" loading="lazy">
+          <img src="https://cdn.jsdelivr.net/gh/Sama997/silverstar-salla-theme@main/assets/generated/melissa-thumb-products-clean.jpg?v=20260608-05" alt="فرشاة هواء ساخن وجهاز تمويج للشعر" loading="lazy">
         </div>
 
         <div class="ss-hair-grid">
@@ -212,9 +260,10 @@
       document.querySelector(".s-block--advanced-content") ||
       findSectionByText("main > section, section", "30 لتر");
     var melissa = document.querySelector(".ss-hair-section");
+    var compare = document.querySelector(".ss-compare-section");
     var brand = document.querySelector(".ss-brand-strip");
 
-    if (!slider || !vacuum15 || !vacuum30 || !melissa) return false;
+    if (!slider || !vacuum15 || !vacuum30 || !compare || !melissa) return false;
 
     if (hero) hero.remove();
 
@@ -224,10 +273,11 @@
 
     slider.insertAdjacentElement("afterend", vacuum15);
     vacuum15.insertAdjacentElement("afterend", vacuum30);
-    vacuum30.insertAdjacentElement("afterend", melissa);
+    vacuum30.insertAdjacentElement("afterend", compare);
+    compare.insertAdjacentElement("afterend", melissa);
     if (brand) melissa.insertAdjacentElement("afterend", brand);
 
-    host.setAttribute("data-ss-home-order", "slider-15l-30l-melissa");
+    host.setAttribute("data-ss-home-order", "slider-15l-30l-compare-melissa");
     return true;
   }
 
