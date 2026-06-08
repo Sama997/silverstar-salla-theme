@@ -5,6 +5,11 @@
   },
   "repository": "https://github.com/Sama997/silverstar-salla-theme",
   "author_email": "support@silverstar14.com",
+  "support_url": "https://silverstar14.com",
+  "description": {
+    "ar": "ثيم عربي فاخر لمتجر سيلفر ستار، مخصص للمكانس عالية التحمل للتنظيف الجاف والرطب وتجفيف السيراميك مع تجربة شراء واضحة وسريعة.",
+    "en": "A premium Arabic RTL Salla theme for Silver Star wet and dry heavy-duty vacuum cleaners with a clean conversion-focused shopping experience."
+  },
   "features": [
     "mega-menu",
     "fonts",
@@ -33,12 +38,6 @@
       "required": false,
       "value": true,
       "selected": true
-    },
-    {
-      "type": "string",
-      "id": "placeholder",
-      "format": "hidden",
-      "value": "src/assets/images/vacuum-30l.jpg"
     }
   ],
   "components": [
@@ -50,7 +49,14 @@
       },
       "icon": "sicon-image-carousel",
       "path": "home.hero",
-      "fields": []
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "silverstar-hero-desc",
+          "value": "<div>واجهة رئيسية عربية لمنتجات سيلفر ستار ومزايا الجاف والرطب.</div>"
+        }
+      ]
     },
     {
       "key": "3bd70910-28f6-4d2e-b6b8-2e6d3aa4d29d",
@@ -60,7 +66,14 @@
       },
       "icon": "sicon-bolt",
       "path": "home.technical-advantages",
-      "fields": []
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "silverstar-advantages-desc",
+          "value": "<div>قسم يبرز قوة المحرك، التنظيف الجاف والرطب، وتجفيف السيراميك.</div>"
+        }
+      ]
     },
     {
       "key": "356d7d28-d8f8-4040-bd15-34593131e0d1",
@@ -70,7 +83,14 @@
       },
       "icon": "sicon-layout-grid",
       "path": "home.comparison",
-      "fields": []
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "silverstar-comparison-desc",
+          "value": "<div>جدول مقارنة يساعد العميل على اختيار السعة المناسبة.</div>"
+        }
+      ]
     },
     {
       "key": "1ebca14b-57dd-4e77-b7ab-fb5e7b658900",
@@ -80,7 +100,14 @@
       },
       "icon": "sicon-video",
       "path": "home.proof",
-      "fields": []
+      "fields": [
+        {
+          "type": "static",
+          "format": "description",
+          "id": "silverstar-proof-desc",
+          "value": "<div>قسم فيديو لعرض تجربة التجفيف والتنظيف الرطب.</div>"
+        }
+      ]
     }
   ]
 }
