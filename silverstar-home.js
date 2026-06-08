@@ -164,26 +164,6 @@
           <img src="https://cdn.jsdelivr.net/gh/Sama997/silverstar-salla-theme@main/assets/generated/melissa-thumb-section.jpg?v=20260608-05" alt="أجهزة شعر مختارة من ميليسا" loading="lazy">
           <img src="https://cdn.jsdelivr.net/gh/Sama997/silverstar-salla-theme@main/assets/generated/melissa-thumb-products-clean.jpg?v=20260608-05" alt="فرشاة هواء ساخن وجهاز تمويج للشعر" loading="lazy">
         </div>
-
-        <div class="ss-hair-grid">
-          <a class="ss-hair-card" href="/search?q=استشوار%20شعر">
-            <div class="ss-hair-content">
-              <small>فرشاة هواء ساخن</small>
-              <h3>استشوار وفرشاة ميليسا</h3>
-              <p>تصفيف سريع بلمسة ناعمة ولمعان يليق بالاستخدام اليومي.</p>
-              <span>تسوق الآن</span>
-            </div>
-          </a>
-
-          <a class="ss-hair-card" href="/search?q=ويفي%20شعر">
-            <div class="ss-hair-content">
-              <small>جهاز تمويج الشعر</small>
-              <h3>تمويج احترافي بلمسة واحدة</h3>
-              <p>مظهر ثابت وتموجات أنيقة بدون تعقيد.</p>
-              <span>اكتشف المنتج</span>
-            </div>
-          </a>
-        </div>
       </section>
     `;
 
