@@ -1,0 +1,35 @@
+{% extends "layouts.master" %}
+
+{% block title %}تم استلام طلبك | سيلفر ستار{% endblock %}
+
+{% block content %}
+  {% hook 'thank-you:start' %}
+  <section class="ss-thank-you">
+    <div class="ss-thank-you__card">
+      <p class="ss-kicker">تم تأكيد الطلب</p>
+      <h1>شكرًا لطلبك من سيلفر ستار</h1>
+      <p>أرسلنا تفاصيل الطلب إلى بريدك المسجل، وسيتم تجهيز الشحنة حسب بيانات التوصيل.</p>
+
+      {% if order.order_id is defined %}
+        <div class="ss-order-number">
+          <span>رقم الطلب</span>
+          <strong>{{ order.order_id }}</strong>
+        </div>
+      {% endif %}
+
+      <div class="ss-thank-you__actions">
+        <a class="ss-button ss-button--primary" href="/">العودة للمتجر</a>
+        <a class="ss-button ss-button--secondary" href="/orders">متابعة الطلبات</a>
+      </div>
+    </div>
+
+    <aside class="ss-thank-you__support">
+      <h2>احتجت مساعدة؟</h2>
+      <p>فريق العناية بالعملاء يساعدك في التشغيل، الملحقات، وخدمة ما بعد البيع.</p>
+      <img src="{{ 'images/customer-care-badge.png'|asset }}" alt="العناية بالعملاء في سيلفر ستار" loading="lazy">
+    </aside>
+  </section>
+  {% hook 'thank-you:items.start' %}
+  {% hook 'thank-you:items.end' %}
+  {% hook 'thank-you:end' %}
+{% endblock %}

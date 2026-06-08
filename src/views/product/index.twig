@@ -1,0 +1,69 @@
+{% extends "layouts.master" %}
+{% set listing_products = products|default([]) %}
+
+{% block title %}{{ page.title|default('منتجات سيلفر ستار') }} | سيلفر ستار{% endblock %}
+
+{% block content %}
+  {% component breadcrumbs %}
+
+  <section class="ss-listing-hero">
+    <div class="ss-listing-hero__copy">
+      <p class="ss-kicker">تسوق حسب احتياجك</p>
+      <h1>{{ page.title|default('مكانس سيلفر ستار') }}</h1>
+      <p>قارن بين السعات، قوة المحرك، ودعم التنظيف الجاف والرطب قبل اختيار المنتج المناسب.</p>
+    </div>
+    <div class="ss-listing-hero__chips" aria-label="اختصارات البحث">
+      <a href="/search?q=مكنسة%2015%20لتر">15 لتر</a>
+      <a href="/search?q=مكنسة%2030%20لتر">30 لتر</a>
+      <a href="/search?q=جاف%20ورطب">جاف ورطب</a>
+      <a href="/search?q=قطع%20غيار">قطع الغيار</a>
+    </div>
+  </section>
+
+  <section class="ss-products-layout">
+    <aside class="ss-products-filter" aria-label="تصفية المنتجات">
+      <h2>تصفية سريعة</h2>
+      <salla-filters></salla-filters>
+      <div class="ss-filter-note">
+        <strong>نصيحة اختيار</strong>
+        <p>15 لتر للبيت اليومي، و30 لتر للمساحات الكبيرة والتنظيف العميق.</p>
+      </div>
+    </aside>
+
+    <div class="ss-products-results">
+      <div class="ss-products-toolbar">
+        <div>
+          <span>نتائج المنتجات</span>
+          <strong>{{ listing_products|length|number }} منتج</strong>
+        </div>
+
+        {% if sort_list is defined %}
+          <label>
+            <span>الترتيب</span>
+            <select onchange="if(this.value) window.location.href=this.value">
+              {% for sort in sort_list %}
+                <option value="{{ sort.url }}" {% if sort.is_selected %}selected{% endif %}>{{ sort.name }}</option>
+              {% endfor %}
+            </select>
+          </label>
+        {% endif %}
+      </div>
+
+      {% hook 'product:index.items.start' %}
+      {% if listing_products|length %}
+        <div class="ss-product-grid">
+          {% for product in listing_products %}
+            {% include 'components/product/card.twig' with { product: product } %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="ss-empty-state">
+          <h2>لا توجد منتجات مطابقة</h2>
+          <p>جرّب البحث عن مكنسة 15 لتر، مكنسة 30 لتر، أو قطع الغيار.</p>
+          <a class="ss-button ss-button--primary" href="/search?q=سيلفر%20ستار">عرض منتجات سيلفر ستار</a>
+        </div>
+      {% endif %}
+      {% hook 'product:index.items.end' %}
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="{{ user.language.code|default('ar') }}" dir="rtl">
+<head>
+  {% hook 'head:start' %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#005295">
+  <title>{% block title %}سيلفر ستار | مكانس جاف ورطب وتجفيف سيراميك{% endblock %}</title>
+  <link rel="preload" as="image" href="{{ 'images/vacuum-pro.png'|asset }}">
+  <link rel="stylesheet" href="{{ 'styles/silverstar.css'|asset }}">
+  {% hook 'head' %}
+  {% block head %}{% endblock %}
+  {% hook 'head:end' %}
+</head>
+<body class="ss-theme ss-rtl {{ page.slug|default('') }}">
+  {% hook 'body:start' %}
+  <a class="ss-skip-link" href="#ss-main">تجاوز إلى المحتوى</a>
+
+  {% include 'components/header/header.twig' %}
+
+  <main id="ss-main" class="ss-main" tabindex="-1">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include 'components/footer/footer.twig' %}
+
+  <script defer src="{{ 'js/silverstar.js'|asset }}"></script>
+  {% block scripts %}{% endblock %}
+  {% hook 'body:end' %}
+</body>
+</html>

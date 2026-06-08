@@ -1,0 +1,43 @@
+{% set product_name = product.name|default('')|lower %}
+{% set tank = '15 أو 30 لتر حسب الموديل' %}
+{% if '30' in product_name or '٣٠' in product_name %}
+  {% set tank = '30 لتر' %}
+{% elseif '15' in product_name or '١٥' in product_name %}
+  {% set tank = '15 لتر' %}
+{% endif %}
+
+<section class="ss-specs" aria-labelledby="ss-specs-title">
+  <div class="ss-section__head ss-section__head--compact">
+    <p class="ss-kicker">المواصفات التقنية</p>
+    <h2 id="ss-specs-title">كل ما يحتاجه العميل قبل الشراء</h2>
+  </div>
+
+  <div class="ss-specs__table" role="table" aria-label="مواصفات مكنسة سيلفر ستار">
+    <div role="row">
+      <span role="cell">قوة المحرك</span>
+      <strong role="cell">1800 واط</strong>
+    </div>
+    <div role="row">
+      <span role="cell">نوع التنظيف</span>
+      <strong role="cell">جاف ورطب</strong>
+    </div>
+    <div role="row">
+      <span role="cell">سعة الخزان</span>
+      <strong role="cell">{{ tank }}</strong>
+    </div>
+    <div role="row">
+      <span role="cell">الأرضيات</span>
+      <strong role="cell">سيراميك، رخام، أرضيات صلبة، وأثاث</strong>
+    </div>
+    <div role="row">
+      <span role="cell">الاستخدام الأنسب</span>
+      <strong role="cell">البيوت، الاستراحات، والمطابخ</strong>
+    </div>
+    <div role="row">
+      <span role="cell">الملحقات</span>
+      <strong role="cell">رؤوس متعددة حسب باقة المنتج</strong>
+    </div>
+  </div>
+
+  <salla-metadata entity-id="{{ product.id|default('') }}" entity-type="product"></salla-metadata>
+</section>

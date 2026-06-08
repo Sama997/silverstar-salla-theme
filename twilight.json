@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "theme_name": "Silver Star Celia Premium",
+  "repo_url": "https://github.com/Sama997/silverstar-salla-theme",
+  "support_url": "https://silverstar14.com",
+  "theme_screenshot": "src/assets/images/vacuum-30l.jpg",
+  "features": [
+    "filters",
+    "component-products-slider",
+    "component-fixed-products",
+    "component-store-features",
+    "component-photos-slider",
+    "component-youtube",
+    "component-testimonials"
+  ],
+  "settings": {
+    "primary_color": "#005295",
+    "secondary_color": "#004d73",
+    "accent_color": "#c8a34a",
+    "layout_direction": "rtl",
+    "store_language": "ar"
+  },
+  "components": [
+    {
+      "name": "silverstar_hero",
+      "path": "home.hero",
+      "display_name": "واجهة سيلفر ستار الرئيسية"
+    },
+    {
+      "name": "technical_advantages",
+      "path": "home.technical-advantages",
+      "display_name": "المزايا التقنية"
+    },
+    {
+      "name": "vacuum_comparison",
+      "path": "home.comparison",
+      "display_name": "مقارنة المقاسات"
+    },
+    {
+      "name": "proof_video",
+      "path": "home.proof",
+      "display_name": "فيديو التجربة"
+    }
+  ]
+}

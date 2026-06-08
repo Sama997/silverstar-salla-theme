@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "name": "Silver Star Premium",
+    "tagline": "Wet and dry vacuum cleaners with ceramic drying"
+  },
+  "actions": {
+    "shop_now": "Shop now",
+    "add_to_cart": "Add to cart",
+    "checkout": "Checkout",
+    "view_product": "View product"
+  },
+  "product": {
+    "specs": "Technical specifications",
+    "dry_wet": "Wet and dry",
+    "ceramic_drying": "Ceramic drying",
+    "motor_power": "Motor power"
+  }
+}

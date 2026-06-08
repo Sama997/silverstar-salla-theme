@@ -1,0 +1,39 @@
+{% set product_name = product.name|default('منتج سيلفر ستار') %}
+{% set product_url = product.url|default('#') %}
+{% set product_image = product.image.url|default(product.image|default('')) %}
+{% set fallback_image = 'images/vacuum-pro.png'|asset %}
+{% set name_lower = product_name|lower %}
+{% set capacity = 'جاف ورطب' %}
+{% if '30' in name_lower or '٣٠' in name_lower %}
+  {% set capacity = '30 لتر' %}
+{% elseif '15' in name_lower or '١٥' in name_lower %}
+  {% set capacity = '15 لتر' %}
+{% endif %}
+
+<article class="ss-product-card ss-reveal" data-product-id="{{ product.id|default('') }}">
+  <a class="ss-product-card__image" href="{{ product_url }}" aria-label="عرض {{ product_name }}">
+    <img src="{{ product_image ? product_image : fallback_image }}" alt="{{ product_name }}" loading="lazy">
+    <span>{{ capacity }}</span>
+  </a>
+
+  <div class="ss-product-card__body">
+    <p class="ss-product-card__spec">1800 واط | جاف ورطب | تجفيف سيراميك</p>
+    <h3><a href="{{ product_url }}">{{ product_name }}</a></h3>
+
+    <div class="ss-product-card__meta">
+      {% if product.rating is defined %}
+        <salla-rating-stars value="{{ product.rating.stars|default(product.rating)|default(5) }}" size="small"></salla-rating-stars>
+      {% endif %}
+      {% if product.price is defined %}
+        <strong>{{ product.price|money }}</strong>
+      {% endif %}
+    </div>
+
+    <div class="ss-product-card__footer">
+      <a class="ss-button ss-button--compact" href="{{ product_url }}">التفاصيل</a>
+      {% if product.id is defined %}
+        <salla-add-product-button class="ss-add-inline" product-id="{{ product.id }}">أضف للسلة</salla-add-product-button>
+      {% endif %}
+    </div>
+  </div>
+</article>

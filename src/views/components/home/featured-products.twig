@@ -1,0 +1,40 @@
+{% set home_products = products|default(featured_products|default([])) %}
+
+<section class="ss-section ss-featured" aria-labelledby="ss-featured-title">
+  <div class="ss-section__head ss-section__head--row">
+    <div>
+      <p class="ss-kicker">الأكثر طلبًا</p>
+      <h2 id="ss-featured-title">مكانس سيلفر ستار المختارة</h2>
+    </div>
+    <a class="ss-text-link" href="/search?q=سيلفر%20ستار">عرض كل المنتجات</a>
+  </div>
+
+  {% if home_products|length %}
+    <div class="ss-product-grid ss-product-grid--home">
+      {% for product in home_products|slice(0, 8) %}
+        {% include 'components/product/card.twig' with { product: product } %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="ss-product-grid ss-product-grid--home">
+      {% include 'components/product/static-card.twig' with {
+        title: 'مكنسة سيلفر ستار 15 لتر',
+        image: 'images/vacuum-15l.jpg',
+        spec: 'جاف ورطب | استخدام يومي',
+        url: '/search?q=مكنسة%2015%20لتر'
+      } %}
+      {% include 'components/product/static-card.twig' with {
+        title: 'مكنسة سيلفر ستار 30 لتر',
+        image: 'images/vacuum-30l.jpg',
+        spec: 'سعة أكبر | تنظيف عميق',
+        url: '/search?q=مكنسة%2030%20لتر'
+      } %}
+      {% include 'components/product/static-card.twig' with {
+        title: 'مكنسة سيلفر ستار برو',
+        image: 'images/vacuum-pro.png',
+        spec: '1800 واط | ملحقات متعددة',
+        url: '/search?q=مكنسة%20برو'
+      } %}
+    </div>
+  {% endif %}
+</section>

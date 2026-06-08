@@ -1,0 +1,57 @@
+{% extends "layouts.master" %}
+
+{% block title %}السلة | سيلفر ستار{% endblock %}
+
+{% block content %}
+  <section class="ss-cart-page">
+    <header class="ss-cart-page__head">
+      <p class="ss-kicker">الخطوة الأخيرة قبل الدفع</p>
+      <h1>سلة الشراء</h1>
+      <p>راجع المنتجات، اختر طريقة الدفع المناسبة، ثم انتقل لإتمام الطلب عبر صفحة الدفع الآمنة في سلة.</p>
+    </header>
+
+    <div class="ss-checkout-steps" aria-label="مراحل الشراء">
+      <span class="is-active">السلة</span>
+      <span>بيانات التوصيل</span>
+      <span>الدفع</span>
+      <span>تأكيد الطلب</span>
+    </div>
+
+    <div class="ss-cart-layout">
+      <section class="ss-cart-items" aria-label="منتجات السلة">
+        {% hook 'cart:items.start' %}
+        {% if cart.items|default([])|length %}
+          {% for item in cart.items %}
+            <article class="ss-cart-item">
+              <img src="{{ item.product.image.url|default(item.image|default('images/vacuum-pro.png'|asset)) }}" alt="{{ item.name|default('منتج سيلفر ستار') }}" loading="lazy">
+              <div>
+                <h2>{{ item.name|default(item.product.name|default('منتج سيلفر ستار')) }}</h2>
+                <p>جاف ورطب | ضمان وخدمة ما بعد البيع</p>
+                <salla-quantity-input item-id="{{ item.id|default('') }}" value="{{ item.quantity|default(1) }}" min="1"></salla-quantity-input>
+              </div>
+              <strong>{{ item.total|default(item.price)|money }}</strong>
+            </article>
+          {% endfor %}
+        {% else %}
+          <div class="ss-empty-state">
+            <h2>سلتك فارغة</h2>
+            <p>ابدأ باختيار مكنسة 15 لتر أو 30 لتر حسب احتياجك.</p>
+            <a class="ss-button ss-button--primary" href="/search?q=مكنسة%20سيلفر%20ستار">تسوق الآن</a>
+          </div>
+        {% endif %}
+        {% hook 'cart:items.end' %}
+      </section>
+
+      <aside class="ss-cart-summary" aria-label="ملخص الطلب">
+        <h2>ملخص الطلب</h2>
+        <salla-cart-summary></salla-cart-summary>
+        <div class="ss-cart-summary__trust">
+          <span>دفع آمن</span>
+          <span>تابي وتمارا حسب التوفر</span>
+          <span>شحن داخل المملكة</span>
+        </div>
+        <a class="ss-button ss-button--primary ss-button--full" href="/checkout">إتمام الطلب</a>
+      </aside>
+    </div>
+  </section>
+{% endblock %}
