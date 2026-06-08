@@ -171,8 +171,8 @@
         </div>
 
         <div class="ss-melissa-media" aria-label="Melissa Hair Devices Images">
-          <img src="https://cdn.jsdelivr.net/gh/Sama997/silverstar-salla-theme@main/assets/generated/melissa-thumb-section.jpg?v=20260608-05" alt="أجهزة شعر مختارة من ميليسا" loading="lazy">
-          <img src="https://cdn.jsdelivr.net/gh/Sama997/silverstar-salla-theme@main/assets/generated/melissa-thumb-products-clean.jpg?v=20260608-05" alt="فرشاة هواء ساخن وجهاز تمويج للشعر" loading="lazy">
+          <img src="https://cdn.salla.sa/NWDqG/products/UQUFg5lJgZwv18vvvBtfjFhO5Lf8yvY9Y7j8gNOE.jpg" alt="جهاز تمويج الشعر الذاتي من ميليسا" loading="lazy">
+          <img src="https://cdn.salla.sa/NWDqG/products/7zxr0KC0zjqI1i8fXyttHheWil0fFC3bjYvHcWbq.png" alt="فرشاة هواء ساخن من ميليسا" loading="lazy">
         </div>
       </section>
     `;
