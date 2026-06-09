@@ -1,30 +1,46 @@
+{% set hero = component|default({}) %}
+{% set hero_kicker = hero.hero_kicker|default('تنظيف جاف ورطب وتجفيف سيراميك') %}
+{% set hero_title = hero.hero_title|default('سيلفر ستار') %}
+{% set hero_lead = hero.hero_lead|default('قوة شفط 1800 واط وتجربة تنظيف مصممة للأرضيات، الأثاث، الزوايا، والبقايا الرطبة بدون تعقيد.') %}
+{% set hero_primary_label = hero.hero_primary_label|default('تسوق المكانس') %}
+{% set hero_primary_url = hero.hero_primary_url|default('/search?q=مكنسة%20سيلفر%20ستار') %}
+{% set hero_secondary_label = hero.hero_secondary_label|default('شاهد التجربة') %}
+{% set hero_secondary_url = hero.hero_secondary_url|default('#ss-proof') %}
+{% set hero_image = hero.hero_image.url|default(hero.hero_image|default('images/vacuum-pro.png'|asset)) %}
+{% set hero_metric_1_value = hero.hero_metric_1_value|default('1800W') %}
+{% set hero_metric_1_label = hero.hero_metric_1_label|default('قوة المحرك') %}
+{% set hero_metric_2_value = hero.hero_metric_2_value|default('15L / 30L') %}
+{% set hero_metric_2_label = hero.hero_metric_2_label|default('سعات عملية') %}
+{% set hero_metric_3_value = hero.hero_metric_3_value|default('100%') %}
+{% set hero_metric_3_label = hero.hero_metric_3_label|default('تجفيف سيراميك في التجربة') %}
+
 <section class="ss-hero" aria-labelledby="ss-hero-title">
   <div class="ss-hero__content ss-reveal">
-    <p class="ss-kicker">تنظيف جاف ورطب وتجفيف سيراميك</p>
-    <h1 id="ss-hero-title">سيلفر ستار</h1>
-    <p class="ss-hero__lead">قوة شفط 1800 واط وتجربة تنظيف مصممة للأرضيات، الأثاث، الزوايا، والبقايا الرطبة بدون تعقيد.</p>
+    <p class="ss-kicker">{{ hero_kicker }}</p>
+    <h1 id="ss-hero-title">{{ hero_title }}</h1>
+    <p class="ss-hero__lead">{{ hero_lead }}</p>
     <div class="ss-hero__actions">
-      <a class="ss-button ss-button--primary" href="/search?q=مكنسة%20سيلفر%20ستار">تسوق المكانس</a>
-      <a class="ss-button ss-button--secondary" href="#ss-proof">شاهد التجربة</a>
+      <a class="ss-button ss-button--primary" href="{{ hero_primary_url }}">{{ hero_primary_label }}</a>
+      <a class="ss-button ss-button--secondary" href="{{ hero_secondary_url }}">{{ hero_secondary_label }}</a>
     </div>
     <dl class="ss-hero__metrics" aria-label="أرقام مهمة">
       <div>
-        <dt>1800W</dt>
-        <dd>قوة المحرك</dd>
+        <dt>{{ hero_metric_1_value }}</dt>
+        <dd>{{ hero_metric_1_label }}</dd>
       </div>
       <div>
-        <dt>15L / 30L</dt>
-        <dd>سعات عملية</dd>
+        <dt>{{ hero_metric_2_value }}</dt>
+        <dd>{{ hero_metric_2_label }}</dd>
       </div>
       <div>
-        <dt>100%</dt>
-        <dd>تجفيف سيراميك في التجربة</dd>
+        <dt>{{ hero_metric_3_value }}</dt>
+        <dd>{{ hero_metric_3_label }}</dd>
       </div>
     </dl>
   </div>
 
-  <div class="ss-hero__media ss-reveal" aria-label="مكنسة سيلفر ستار">
-    <img class="ss-hero__product" src="{{ 'images/vacuum-pro.png'|asset }}" alt="مكنسة سيلفر ستار للجاف والرطب" width="640" height="960" fetchpriority="high">
+  <div class="ss-hero__media ss-reveal" aria-label="{{ hero_title }}">
+    <img class="ss-hero__product" src="{{ hero_image }}" alt="{{ hero_title }}" width="640" height="960" fetchpriority="high">
     <div class="ss-hero__panel" aria-hidden="true">
       <span>جاف</span>
       <span>رطب</span>

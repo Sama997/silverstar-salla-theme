@@ -55,6 +55,118 @@
           "format": "description",
           "id": "silverstar-hero-desc",
           "value": "<div>واجهة رئيسية عربية لمنتجات سيلفر ستار ومزايا الجاف والرطب.</div>"
+        },
+        {
+          "type": "string",
+          "format": "text",
+          "id": "hero_kicker",
+          "label": "النص العلوي",
+          "description": "النص الصغير فوق عنوان الواجهة.",
+          "value": "تنظيف جاف ورطب وتجفيف سيراميك"
+        },
+        {
+          "type": "string",
+          "format": "text",
+          "id": "hero_title",
+          "label": "عنوان الواجهة",
+          "description": "العنوان الرئيسي في أول الصفحة.",
+          "value": "سيلفر ستار"
+        },
+        {
+          "type": "text",
+          "format": "textarea",
+          "id": "hero_lead",
+          "label": "وصف الواجهة",
+          "description": "النص التعريفي المختصر تحت العنوان.",
+          "value": "قوة شفط 1800 واط وتجربة تنظيف مصممة للأرضيات، الأثاث، الزوايا، والبقايا الرطبة بدون تعقيد."
+        },
+        {
+          "type": "string",
+          "format": "text",
+          "id": "hero_primary_label",
+          "label": "نص الزر الأساسي",
+          "description": "مثال: تسوق المكانس.",
+          "value": "تسوق المكانس"
+        },
+        {
+          "type": "string",
+          "format": "url",
+          "id": "hero_primary_url",
+          "label": "رابط الزر الأساسي",
+          "description": "الرابط الذي يفتح عند الضغط على الزر الأساسي.",
+          "value": "/search?q=مكنسة%20سيلفر%20ستار"
+        },
+        {
+          "type": "string",
+          "format": "text",
+          "id": "hero_secondary_label",
+          "label": "نص الزر الثانوي",
+          "description": "مثال: شاهد التجربة.",
+          "value": "شاهد التجربة"
+        },
+        {
+          "type": "string",
+          "format": "url",
+          "id": "hero_secondary_url",
+          "label": "رابط الزر الثانوي",
+          "description": "الرابط الذي يفتح عند الضغط على الزر الثانوي.",
+          "value": "#ss-proof"
+        },
+        {
+          "type": "image",
+          "format": "image",
+          "id": "hero_image",
+          "label": "صورة المنتج في الواجهة",
+          "description": "الصورة الكبيرة المعروضة في قسم الواجهة.",
+          "value": ""
+        },
+        {
+          "type": "string",
+          "format": "text",
+          "id": "hero_metric_1_value",
+          "label": "قيمة الرقم الأول",
+          "description": "مثال: 1800W.",
+          "value": "1800W"
+        },
+        {
+          "type": "string",
+          "format": "text",
+          "id": "hero_metric_1_label",
+          "label": "وصف الرقم الأول",
+          "description": "مثال: قوة المحرك.",
+          "value": "قوة المحرك"
+        },
+        {
+          "type": "string",
+          "format": "text",
+          "id": "hero_metric_2_value",
+          "label": "قيمة الرقم الثاني",
+          "description": "مثال: 15L / 30L.",
+          "value": "15L / 30L"
+        },
+        {
+          "type": "string",
+          "format": "text",
+          "id": "hero_metric_2_label",
+          "label": "وصف الرقم الثاني",
+          "description": "مثال: سعات عملية.",
+          "value": "سعات عملية"
+        },
+        {
+          "type": "string",
+          "format": "text",
+          "id": "hero_metric_3_value",
+          "label": "قيمة الرقم الثالث",
+          "description": "مثال: 100%.",
+          "value": "100%"
+        },
+        {
+          "type": "string",
+          "format": "text",
+          "id": "hero_metric_3_label",
+          "label": "وصف الرقم الثالث",
+          "description": "مثال: تجفيف سيراميك في التجربة.",
+          "value": "تجفيف سيراميك في التجربة"
         }
       ]
     },

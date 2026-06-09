@@ -6,6 +6,7 @@
 (function () {
   "use strict";
 
+
   function normalizePath() {
     return window.location.pathname.replace(/\/+$/, "");
   }
@@ -113,7 +114,7 @@
           <h2>رحلة شراء مرتبة</h2>
           <p>
             الواجهة الجديدة تضع المنتج الأساسي أولاً، ثم الدليل، ثم الثقة، ثم المنتجات
-            المكملة. ميليسا تبقى إضافة هادئة ولا تنافس هوية سيلفر ستار.
+            المكملة التي يضيفها التاجر من مكونات سلة الرسمية.
           </p>
         </div>
       </section>
@@ -161,20 +162,6 @@
         </div>
       </section>
 
-      <section class="ss-hair-section" aria-label="Hair Devices">
-        <div class="ss-section-head">
-          <div>
-            <h2>أجهزة الشعر المختارة</h2>
-            <p>قسم إضافي صغير داخل تجربة سيلفر ستار، بحضور بصري هادئ لا يطغى على المكانس الأساسية.</p>
-          </div>
-          <a class="ss-mini-link" href="/search?q=أجهزة%20الشعر">تسوقي أجهزة الشعر</a>
-        </div>
-
-        <div class="ss-melissa-media" aria-label="Melissa Hair Devices Images">
-          <img src="https://cdn.salla.sa/NWDqG/products/UQUFg5lJgZwv18vvvBtfjFhO5Lf8yvY9Y7j8gNOE.jpg" alt="جهاز تمويج الشعر الذاتي من ميليسا" loading="lazy">
-          <img src="https://cdn.salla.sa/NWDqG/products/7zxr0KC0zjqI1i8fXyttHheWil0fFC3bjYvHcWbq.png" alt="فرشاة هواء ساخن من ميليسا" loading="lazy">
-        </div>
-      </section>
     `;
 
     return wrapper;
@@ -277,10 +264,9 @@
     var imageGrid = document.querySelector(".s-block--images-grid");
     var spareParts = document.querySelector(".s-block--best-offers");
     var cleaners = document.querySelector(".s-block--custom-products");
-    var melissa = document.querySelector(".ss-hair-section");
     var faq = document.querySelector(".s-block--faq");
 
-    if (!slider || !vacuum15 || !vacuum30 || !compare || !melissa) return false;
+    if (!slider || !vacuum15 || !vacuum30 || !compare) return false;
 
     if (hero) hero.remove();
     markLowPriorityHomeBlocks();
@@ -303,21 +289,9 @@
     cursor = moveAfter(cursor, imageGrid);
     cursor = moveAfter(cursor, spareParts);
     cursor = moveAfter(cursor, cleaners);
-    cursor = moveAfter(cursor, melissa);
     cursor = moveAfter(cursor, faq);
 
     host.setAttribute("data-ss-home-order", "premium-celia-runtime");
-    return true;
-  }
-
-  function removeExtraNativeHairImage() {
-    var image = document.querySelector('img[src*="352f74dd-2c46-4788-a982-844be3b1b06d"]');
-    if (!image) return false;
-
-    var card = image.closest(".col-span-2") || image.closest("a") || image.parentElement;
-    if (!card || !card.parentElement) return false;
-
-    card.remove();
     return true;
   }
 
@@ -329,12 +303,10 @@
     var tries = 0;
     var timer = setInterval(function () {
       tries++;
-      removeExtraNativeHairImage();
       if (arrangeSilverStarHomeOrder() || tries >= 70) clearInterval(timer);
     }, 250);
 
     arrangeSilverStarHomeOrder();
-    removeExtraNativeHairImage();
   }
 
   function directChildrenByTag(parent, tagName) {

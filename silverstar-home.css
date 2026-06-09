@@ -156,28 +156,6 @@ body.ss-enhanced-home .ss-compare-action {
   background: linear-gradient(135deg, var(--ss-blue), var(--ss-graphite)) !important;
 }
 
-body.ss-enhanced-home .ss-hair-section {
-  margin-top: 32px !important;
-  border-radius: var(--ss-radius) !important;
-  border: 1px solid rgba(200, 163, 74, 0.20) !important;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 251, 253, 0.98)) !important;
-  box-shadow: var(--ss-shadow-soft) !important;
-}
-
-body.ss-enhanced-home .ss-hair-section .ss-section-head h2 {
-  color: var(--ss-graphite) !important;
-}
-
-body.ss-enhanced-home .ss-melissa-media {
-  max-width: 680px;
-  margin-inline: auto;
-}
-
-body.ss-enhanced-home .ss-melissa-media img {
-  border-radius: var(--ss-radius) !important;
-  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.08) !important;
-}
-
 body.ss-enhanced-home .s-block--videos-gallery {
   padding: 28px 0 !important;
   background: linear-gradient(135deg, var(--ss-graphite), var(--ss-teal)) !important;
@@ -423,8 +401,7 @@ body.ss-enhanced-cart .ss-cart-recovery__actions a:last-child {
     margin-top: 24px !important;
   }
 
-  body.ss-enhanced-home .ss-compare-section,
-  body.ss-enhanced-home .ss-hair-section {
+  body.ss-enhanced-home .ss-compare-section {
     width: min(100% - 18px, 1180px) !important;
     margin-top: 24px !important;
   }
@@ -956,160 +933,6 @@ body.ss-enhanced-home .advanced-slider--1 img {
 }
 
 /* =========================
-   Hair Devices Section
-   ========================= */
-
-.ss-hair-section {
-  width: min(1180px, calc(100% - 28px));
-  margin: 0 auto 34px;
-  direction: rtl;
-}
-
-.ss-section-head {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 18px;
-  margin-bottom: 16px;
-}
-
-.ss-section-head h2 {
-  margin: 0;
-  color: var(--ss-dark);
-  font-size: clamp(24px, 3vw, 36px);
-  font-weight: 950;
-  letter-spacing: -0.8px;
-}
-
-.ss-section-head p {
-  margin: 7px 0 0;
-  color: var(--ss-gray);
-  line-height: 1.7;
-  font-size: 14px;
-}
-
-.ss-mini-link {
-  color: #111827 !important;
-  background: #ffffff;
-  border: 1px solid var(--ss-border);
-  border-radius: 999px;
-  padding: 11px 16px;
-  text-decoration: none !important;
-  font-size: 13px;
-  font-weight: 850;
-  box-shadow: 0 8px 22px rgba(15,23,42,0.06);
-  white-space: nowrap;
-}
-
-.ss-hair-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.ss-melissa-media {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin: 0 0 14px;
-}
-
-.ss-melissa-media img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 18px;
-  border: 1px solid rgba(0, 82, 149, 0.10);
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
-  background: #f8fafc;
-}
-
-.ss-hair-card {
-  position: relative;
-  overflow: hidden;
-  min-height: 190px;
-  border-radius: var(--ss-radius);
-  background:
-    radial-gradient(circle at 16% 20%, rgba(255,255,255,0.55), transparent 22%),
-    linear-gradient(135deg, #111827, #374151);
-  border: 1px solid rgba(255,255,255,0.25);
-  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
-  padding: 30px;
-  display: flex;
-  align-items: flex-end;
-  text-decoration: none !important;
-  transition: transform .22s ease, box-shadow .22s ease;
-}
-
-.ss-hair-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 54px rgba(15, 23, 42, 0.18);
-}
-
-.ss-hair-card::before {
-  content: "";
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.12);
-  inset: -90px -70px auto auto;
-}
-
-.ss-hair-card::after {
-  content: "";
-  position: absolute;
-  width: 130px;
-  height: 130px;
-  border-radius: 30px;
-  background: rgba(255,255,255,0.10);
-  inset: auto 32px 30px auto;
-  transform: rotate(14deg);
-}
-
-.ss-hair-content {
-  position: relative;
-  z-index: 2;
-  color: #ffffff;
-  max-width: 340px;
-}
-
-.ss-hair-content small {
-  display: inline-flex;
-  margin-bottom: 12px;
-  padding: 7px 11px;
-  border-radius: 999px;
-  color: rgba(255,255,255,0.82);
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.16);
-}
-
-.ss-hair-content h3 {
-  margin: 0 0 8px;
-  color: #ffffff;
-  font-size: 26px;
-  font-weight: 950;
-}
-
-.ss-hair-content p {
-  margin: 0 0 18px;
-  color: rgba(255,255,255,0.76);
-  line-height: 1.8;
-  font-size: 14px;
-}
-
-.ss-hair-content span {
-  display: inline-flex;
-  color: #111827;
-  background: #ffffff;
-  border-radius: 999px;
-  padding: 10px 15px;
-  font-weight: 900;
-  font-size: 13px;
-}
-
-/* =========================
    Product Cards Enhancement
    ========================= */
 
@@ -1196,22 +1019,12 @@ body.ss-enhanced-home .btn--primary {
     grid-template-columns: 1fr;
   }
 
-  .ss-section-head {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .ss-hair-grid,
-  .ss-melissa-media {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 520px) {
   .ss-hero-wrap,
   .ss-brand-strip,
-  .ss-compare-section,
-  .ss-hair-section {
+  .ss-compare-section {
     width: min(100% - 18px, 1180px);
   }
 
@@ -1289,38 +1102,6 @@ body.ss-enhanced-home .btn--primary {
     gap: 3px;
   }
 
-  .ss-section-head h2 {
-    font-size: 24px;
-  }
-
-  .ss-melissa-media {
-    gap: 8px;
-  }
-
-  .ss-melissa-media img {
-    border-radius: 14px;
-  }
-
-  .ss-hair-card {
-    min-height: 168px;
-    padding: 18px;
-    border-radius: 22px;
-  }
-
-  .ss-hair-content small {
-    margin-bottom: 8px;
-    font-size: 11px;
-  }
-
-  .ss-hair-content h3 {
-    font-size: 18px;
-  }
-
-  .ss-hair-content p {
-    font-size: 12px;
-    line-height: 1.65;
-    margin-bottom: 12px;
-  }
 }
 
 /* Final cascade guard: keep the reference system above older Celia overrides. */
@@ -1337,12 +1118,10 @@ body.ss-enhanced-home .advanced-slider--1 {
 }
 
 body.ss-enhanced-home .ss-compare-section,
-body.ss-enhanced-home .ss-hair-section,
 body.ss-enhanced-home .ss-brand-strip,
 body.ss-enhanced-home .ss-brand-card,
 body.ss-enhanced-home .ss-category-card,
 body.ss-enhanced-home .ss-compare-card,
-body.ss-enhanced-home .ss-melissa-media img,
 body.ss-enhanced-home .s-product-card-entry {
   border-radius: var(--ss-radius) !important;
 }

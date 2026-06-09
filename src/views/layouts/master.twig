@@ -6,6 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#005295">
   <title>{% block title %}سيلفر ستار | مكانس جاف ورطب وتجفيف سيراميك{% endblock %}</title>
+  {% block seo %}
+    <meta name="description" content="متجر سيلفر ستار للمكانس الجافة والرطبة عالية التحمل مع حلول عملية لتنظيف وتجفيف السيراميك داخل المملكة.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="سيلفر ستار | مكانس جاف ورطب وتجفيف سيراميك">
+    <meta property="og:description" content="مكانس سيلفر ستار للجاف والرطب وتجفيف السيراميك مع تجربة شراء واضحة ودفع آمن وخدمة ما بعد البيع.">
+    <meta property="og:image" content="{{ 'images/vacuum-pro.png'|asset }}">
+  {% endblock %}
   <link rel="preload" as="image" href="{{ 'images/vacuum-pro.png'|asset }}">
   <link rel="stylesheet" href="{{ 'styles/silverstar.css'|asset }}">
   {% hook 'head' %}
