@@ -1,6 +1,11 @@
 {% extends "layouts.master" %}
 
 {% block title %}{{ product.name|default('منتج سيلفر ستار') }} | سيلفر ستار{% endblock %}
+{% block meta_description %}{{ product.subtitle|default('مكنسة سيلفر ستار للجاف والرطب بقوة شفط عالية وتجربة مناسبة للأرضيات الصلبة والسيراميك.')|striptags|slice(0, 155) }}{% endblock %}
+{% block og_type %}product{% endblock %}
+{% block og_title %}{{ product.name|default('منتج سيلفر ستار') }} | سيلفر ستار{% endblock %}
+{% block og_description %}{{ product.subtitle|default('مكانس سيلفر ستار للجاف والرطب مع دفع آمن وخدمة ما بعد البيع.')|striptags|slice(0, 155) }}{% endblock %}
+{% block og_image %}{{ product.image.url|default(product.image|default('images/vacuum-pro.png'|asset)) }}{% endblock %}
 
 {% block content %}
   {% component breadcrumbs %}
@@ -110,13 +115,16 @@
   {% component comments %}
   {% component product.similar-products %}
 
-  <div class="ss-sticky-buy" data-ss-sticky-buy hidden>
-    <div>
-      <strong>{{ product.name|default('مكنسة سيلفر ستار') }}</strong>
-      {% if product.price is defined %}
-        <span>{{ product.price|money }}</span>
-      {% endif %}
+  {% set sticky_add_to_cart_enabled = theme.settings.sticky_add_to_cart is not defined ? true : theme.settings.sticky_add_to_cart %}
+  {% if sticky_add_to_cart_enabled %}
+    <div class="ss-sticky-buy" data-ss-sticky-buy hidden>
+      <div>
+        <strong>{{ product.name|default('مكنسة سيلفر ستار') }}</strong>
+        {% if product.price is defined %}
+          <span>{{ product.price|money }}</span>
+        {% endif %}
+      </div>
+      <button class="ss-button ss-button--primary" type="button" data-ss-sticky-add>أضف للسلة</button>
     </div>
-    <button class="ss-button ss-button--primary" type="button" data-ss-sticky-add>أضف للسلة</button>
-  </div>
+  {% endif %}
 {% endblock %}

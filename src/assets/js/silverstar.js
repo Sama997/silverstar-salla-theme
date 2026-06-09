@@ -99,9 +99,12 @@
 
   function triggerPrimaryAddAction() {
     var action = findPrimaryAddAction();
-    if (!action) return;
+    if (!action || action.hasAttribute("disabled") || action.getAttribute("aria-disabled") === "true") return;
+    if (typeof action.click === "function") {
+      action.click();
+      return;
+    }
     action.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true }));
-    if (typeof action.click === "function") action.click();
   }
 
   function initStickyBuy() {
