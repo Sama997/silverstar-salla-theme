@@ -207,6 +207,7 @@
 
   function markLowPriorityHomeBlocks() {
     var selectors = [
+      ".advanced-slider--1",
       ".animated-text--0",
       ".dynamic-banner--4",
       ".products-lookbook--5",
@@ -289,6 +290,7 @@
   function scheduleHomeEnhancements() {
     document.body.classList.add("ss-enhanced-home");
     markFirstProductSection();
+    markLowPriorityHomeBlocks();
     injectAfterHeader();
 
     var tries = 0;
