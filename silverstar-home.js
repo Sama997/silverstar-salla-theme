@@ -33,58 +33,6 @@
     wrapper.className = "ss-home-injected";
 
     wrapper.innerHTML = `
-      <section class="ss-hero-wrap" aria-label="Silver Star Main Banner">
-        <div class="ss-hero">
-          <div class="ss-hero-content">
-            <div class="ss-eyebrow">مكانس جاف ورطب للبيت والاستراحة</div>
-
-            <h1>
-              سيلفر ستار
-              <span>تنظيف جاف ورطب بسهولة</span>
-            </h1>
-
-            <p>
-              مكانس سيلفر ستار تساعدك في تنظيف الغبار والانسكابات اليومية،
-              مع خيارات 15 لتر و30 لتر وضمان وخدمة داخل المملكة.
-            </p>
-
-            <div class="ss-actions">
-              <a class="ss-btn ss-btn-primary" href="#ss-products-start">تسوق المكانس</a>
-              <a class="ss-btn ss-btn-secondary" href="#ss-proof-section">شاهد التجربة</a>
-            </div>
-
-            <div class="ss-trust-row">
-              <div class="ss-trust-card">
-                <strong>1800W / 2000W</strong>
-                <small>قوة شفط عملية للبيت والاستراحة</small>
-              </div>
-              <div class="ss-trust-card">
-                <strong>15L / 30L</strong>
-                <small>اختيار السعة حسب الاستخدام</small>
-              </div>
-              <div class="ss-trust-card">
-                <strong>جاف ورطب</strong>
-                <small>تعامل أفضل مع الغبار والانسكابات</small>
-              </div>
-              <div class="ss-trust-card">
-                <strong>ضمان وخدمة</strong>
-                <small>مساندة بعد البيع حسب سياسة المتجر</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="ss-hero-visual" aria-hidden="true">
-            <div class="ss-product-orbit">
-              <div>
-                <strong>Silver<br>Star</strong>
-                <span>Wet & Dry Vacuum</span>
-                <em>نظافة يومية أسهل</em>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="ss-brand-strip" aria-label="Silver Star Brand Value">
         <div class="ss-brand-card">
           <h2>مكانس سيلفر ستار</h2>
@@ -211,8 +159,25 @@
       document.querySelector(".salla-header") ||
       document.querySelector("salla-header");
 
+    var anchor =
+      document.querySelector(".advanced-slider--1") ||
+      document.querySelector(".special-product--2") ||
+      document.querySelector(".s-block--advanced-content") ||
+      findSectionByText("main > section, section", "15 لتر") ||
+      findSectionByText("main > section, section", "30 لتر");
+
+    if (anchor && anchor.parentNode) {
+      anchor.insertAdjacentElement("afterend", sections);
+      return true;
+    }
+
     if (header && header.parentNode) {
-      header.insertAdjacentElement("afterend", sections);
+      var mainAfterHeader = document.querySelector("main") || document.querySelector("#app");
+      if (mainAfterHeader && mainAfterHeader.lastElementChild) {
+        mainAfterHeader.appendChild(sections);
+      } else {
+        header.insertAdjacentElement("afterend", sections);
+      }
       return true;
     }
 
