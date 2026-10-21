@@ -1,113 +1,114 @@
 {
-  "name": {
-    "ar": "Silver Star Celia Premium",
-    "en": "Silver Star Celia Premium"
-  },
-  "repository": "https://github.com/Sama997/silverstar-salla-theme",
-  "author_email": "support@silverstar14.com",
-  "support_url": "https://silverstar14.com",
-  "description": {
-    "ar": "ثيم عربي فاخر لمتجر سيلفر ستار، مخصص للمكانس عالية التحمل للتنظيف الجاف والرطب وتجفيف السيراميك مع تجربة شراء واضحة وسريعة.",
-    "en": "A premium Arabic RTL Salla theme for Silver Star wet and dry heavy-duty vacuum cleaners with a clean conversion-focused shopping experience."
-  },
-  "features": [
-    "mega-menu",
-    "fonts",
-    "color",
-    "breadcrumb",
-    "unite-cards-height",
-    "component-featured-products",
-    "component-fixed-banner",
-    "filters",
-    "component-products-slider",
-    "component-fixed-products",
-    "component-store-features",
-    "component-photos-slider",
-    "component-youtube",
-    "component-testimonials",
-    "menu-images"
-  ],
-  "settings": [
-    {
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "label": "تثبيت زر الإضافة للسلة أسفل شاشة الجوال",
-      "description": null,
-      "id": "sticky_add_to_cart",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true
-    }
-  ],
-  "components": [
-    {
-      "key": "41e8cbe9-7f3a-4f23-b279-5c514bd60d37",
-      "title": {
-        "ar": "واجهة سيلفر ستار الرئيسية",
-        "en": "Silver Star Hero"
-      },
-      "icon": "sicon-image-carousel",
-      "path": "home.hero",
-      "fields": [
-        {
-          "type": "static",
-          "format": "description",
-          "id": "silverstar-hero-desc",
-          "value": "<div>واجهة رئيسية عربية لمنتجات سيلفر ستار ومزايا الجاف والرطب.</div>"
-        }
-      ]
+    "name": {
+        "ar": "Silver Star Celia Premium",
+        "en": "Silver Star Celia Premium"
     },
-    {
-      "key": "3bd70910-28f6-4d2e-b6b8-2e6d3aa4d29d",
-      "title": {
-        "ar": "المزايا التقنية",
-        "en": "Technical Advantages"
-      },
-      "icon": "sicon-bolt",
-      "path": "home.technical-advantages",
-      "fields": [
-        {
-          "type": "static",
-          "format": "description",
-          "id": "silverstar-advantages-desc",
-          "value": "<div>قسم يبرز قوة المحرك، التنظيف الجاف والرطب، وتجفيف السيراميك.</div>"
-        }
-      ]
+    "repository": "https://github.com/Sama997/silverstar-salla-theme",
+    "author_email": "support@silverstar14.com",
+    "support_url": "https://silverstar14.com",
+    "description": {
+        "ar": "ثيم عربي فاخر لمتجر سيلفر ستار، مخصص للمكانس عالية التحمل للتنظيف الجاف والرطب وتجفيف السيراميك مع تجربة شراء واضحة وسريعة.",
+        "en": "A premium Arabic RTL Salla theme for Silver Star wet and dry heavy-duty vacuum cleaners with a clean conversion-focused shopping experience."
     },
-    {
-      "key": "356d7d28-d8f8-4040-bd15-34593131e0d1",
-      "title": {
-        "ar": "مقارنة المقاسات",
-        "en": "Vacuum Size Comparison"
-      },
-      "icon": "sicon-layout-grid",
-      "path": "home.comparison",
-      "fields": [
+    "features": [
+        "mega-menu",
+        "fonts",
+        "color",
+        "breadcrumb",
+        "unite-cards-height",
+        "component-featured-products",
+        "component-fixed-banner",
+        "filters",
+        "component-products-slider",
+        "component-fixed-products",
+        "component-store-features",
+        "component-photos-slider",
+        "component-youtube",
+        "component-testimonials",
+        "menu-images",
+        "component-parallax-background"
+    ],
+    "settings": [
         {
-          "type": "static",
-          "format": "description",
-          "id": "silverstar-comparison-desc",
-          "value": "<div>جدول مقارنة يساعد العميل على اختيار السعة المناسبة.</div>"
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "تثبيت زر الإضافة للسلة أسفل شاشة الجوال",
+            "description": null,
+            "id": "sticky_add_to_cart",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
         }
-      ]
-    },
-    {
-      "key": "1ebca14b-57dd-4e77-b7ab-fb5e7b658900",
-      "title": {
-        "ar": "فيديو التجربة",
-        "en": "Proof Video"
-      },
-      "icon": "sicon-video",
-      "path": "home.proof",
-      "fields": [
+    ],
+    "components": [
         {
-          "type": "static",
-          "format": "description",
-          "id": "silverstar-proof-desc",
-          "value": "<div>قسم فيديو لعرض تجربة التجفيف والتنظيف الرطب.</div>"
+            "key": "41e8cbe9-7f3a-4f23-b279-5c514bd60d37",
+            "title": {
+                "ar": "واجهة سيلفر ستار الرئيسية",
+                "en": "Silver Star Hero"
+            },
+            "icon": "sicon-image-carousel",
+            "path": "home.hero",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "silverstar-hero-desc",
+                    "value": "<div>واجهة رئيسية عربية لمنتجات سيلفر ستار ومزايا الجاف والرطب.</div>"
+                }
+            ]
+        },
+        {
+            "key": "3bd70910-28f6-4d2e-b6b8-2e6d3aa4d29d",
+            "title": {
+                "ar": "المزايا التقنية",
+                "en": "Technical Advantages"
+            },
+            "icon": "sicon-bolt",
+            "path": "home.technical-advantages",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "silverstar-advantages-desc",
+                    "value": "<div>قسم يبرز قوة المحرك، التنظيف الجاف والرطب، وتجفيف السيراميك.</div>"
+                }
+            ]
+        },
+        {
+            "key": "356d7d28-d8f8-4040-bd15-34593131e0d1",
+            "title": {
+                "ar": "مقارنة المقاسات",
+                "en": "Vacuum Size Comparison"
+            },
+            "icon": "sicon-layout-grid",
+            "path": "home.comparison",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "silverstar-comparison-desc",
+                    "value": "<div>جدول مقارنة يساعد العميل على اختيار السعة المناسبة.</div>"
+                }
+            ]
+        },
+        {
+            "key": "1ebca14b-57dd-4e77-b7ab-fb5e7b658900",
+            "title": {
+                "ar": "فيديو التجربة",
+                "en": "Proof Video"
+            },
+            "icon": "sicon-video",
+            "path": "home.proof",
+            "fields": [
+                {
+                    "type": "static",
+                    "format": "description",
+                    "id": "silverstar-proof-desc",
+                    "value": "<div>قسم فيديو لعرض تجربة التجفيف والتنظيف الرطب.</div>"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
